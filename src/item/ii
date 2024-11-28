@@ -1,0 +1,20 @@
+import React, { useState } from 'react';
+
+function CheckboxToggle() {
+  // State to manage checkbox
+  const [isChecked, setIsChecked] = useState(false);
+
+  // Function to toggle checkbox
+  const toggleCheckbox = () => {
+    setIsChecked(prevState => !prevState);
+  };
+
+  return (
+    <div>
+      <input
+        type="checkbox"
+        checked={isChecked}
+        onChange={toggleCheckbox} // Toggle on change
+      />
+      <button onClick={toggleCheckbox}>
+        {isChecked ? 'Uncheck' : 'Check'}
